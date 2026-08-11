@@ -2,5 +2,7 @@
 requiere que calcule y muestre el porcentaje de descuento que le ha sido aplicado. */
 
 public class Algoritmo_seventeen {
-    
+    public static void main(String[] args) {
+        
+    }
 }

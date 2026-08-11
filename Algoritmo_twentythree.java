@@ -7,5 +7,27 @@ Bs. B3 y Bs. B4 respectivamente. Pruebe su algoritmo o programa con los sig. Val
 N=197, B1=132, B2= 180, B3= 7,50 y B4= 14,50. Respuesta: 4895 */
 
 public class Algoritmo_twentythree {
-    
+    public static void main(String[] args) {
+        
+        double tonelada;
+        double M = 452;
+        double N = 187;
+        double B1 = 132;
+        double B2 = 180;
+        double B3 = 7.50;
+        double B4 = 14.50;
+
+        System.out.println("Cantidad de tonelada: ");
+        tonelada = Double.parseDouble(System.console().readLine());
+
+        double tonelada_harina = tonelada*M;
+        double tonelada_aceite = tonelada*N;
+
+        double venta_B1 = tonelada_harina/24;
+        double venta_B2 = tonelada_aceite/15;
+        
+        double sobrante_harina = tonelada_harina-(venta_B1*24);
+        double sobrante_litro = tonelada_aceite-(venta_B2*15);
+
+    }
 }
