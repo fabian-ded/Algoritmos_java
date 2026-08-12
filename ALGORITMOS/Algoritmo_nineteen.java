@@ -1,3 +1,4 @@
+package ALGORITMOS;
 /* En un hospital rural existen tres áreas: Ginecología, Pediatría y Traumatología. El presupuesto anual
 del hospital se reparte conforme a la siguiente tabla:
 Área Porcentaje del presupuesto

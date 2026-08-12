@@ -1,3 +1,4 @@
+package ALGORITMOS;
 /* El cambio de divisas en la bolsa de Madrid el 25/08/1987 fue el siguiente
 100 chelines austríacos = 956.871 pesetas
 1 dólar EEUU = 122.499 pesetas

@@ -1,3 +1,4 @@
+package ALGORITMOS;
 /* Un mayorista compra a un agricultor un lote de X naranjas a Bs. Y la docena. Después de vender
 todas las naranjas a los detallistas, obtiene Bs. K. Calcular el porcentaje de ganancia obtenida en la
 inversión. Pruebe su programa con los siguientes valores: X=48000, Y=6, K=42000 para obtener 75%

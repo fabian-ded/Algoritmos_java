@@ -1,3 +1,4 @@
+package ALGORITMOS;
 /* Un maestro desea saber qué porcentaje de hombres y qué porcentaje de mujeres hay en un grupo
 de estudiantes. */
 

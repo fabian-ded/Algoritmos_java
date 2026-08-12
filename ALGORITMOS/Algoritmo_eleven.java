@@ -1,3 +1,4 @@
+package ALGORITMOS;
 /* 11. Se conoce de un trabajador su nombre, el número de horas normales trabajadas, el pago de una hora
 normal y el número de horas extras trabajadas. Además, que, cada hora extra se paga 25% más del
 valor de una hora normal. Si se deducen al trabajador sobre el sueldo base 5% del paro forzoso, 2%

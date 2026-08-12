@@ -1,3 +1,4 @@
+package ALGORITMOS;
 /* El siguiente sistema de ecuaciones lineales:
 aX + bY = c
 dX + eY = f
