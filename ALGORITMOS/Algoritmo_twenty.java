@@ -7,17 +7,22 @@ I = ------------------------------
 
 public class Algoritmo_twenty {
     public static void main(String[] args) {
-        
-        double Capital;
-        double Tiempo = 0.4;
-        double Razon;
 
-        System.out.println("valor que pagaste en los 4 años: ");
-        String entrada = System.console().readLine();
-        Capital = Double.parseDouble(entrada.replace(".", ""));
+        double capital;
+        double intereses;
+        double tiempo = 4;
+        double razon;
 
-        double intereses = Capital* Tiempo;
-        
+        System.out.println("Ingrese el valor del préstamo: ");
+        String entradaCapital = System.console().readLine();
+        capital = Double.parseDouble(entradaCapital.replace(".", ""));
 
+        System.out.println("Ingrese el valor de los intereses pagados en los 4 años: ");
+        String entradaIntereses = System.console().readLine();
+        intereses = Double.parseDouble(entradaIntereses.replace(".", ""));
+
+        razon = (intereses * 100) / (capital * tiempo);
+
+        System.out.println("El porcentaje anual cobrado fue de: " + razon + "%");
     }
 }
