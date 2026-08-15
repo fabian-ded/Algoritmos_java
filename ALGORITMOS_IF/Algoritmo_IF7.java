@@ -5,5 +5,9 @@ resultado redondeado será 2300 y si N es 2962, el resultado redondeado será 30
 package ALGORITMOS_IF;
 
 public class Algoritmo_IF7 {
-    
+    public static void main(String[] args) {
+        
+        
+
+    }
 }

@@ -11,5 +11,35 @@ cantidad prestada al banco. */
 package ALGORITMOS_IF;
 
 public class Algoritmo_IF5 {
-    
+    public static void main(String[] args) {
+        
+        double piezas;
+        double valor = 100000;
+        double monto_total = 500000;
+
+
+        System.out.println("Ingrese la cantidad de piezas: ");
+        piezas = Double.parseDouble(System.console().readLine());
+
+        double valor_pieza = piezas*valor;
+
+        if(valor_pieza>monto_total){
+            double inversion = (valor_pieza*55)/100;
+            double prestamo = (valor_pieza*30)/100;
+            double total = valor_pieza-(inversion + prestamo);
+            double interes = (total*20)/100;
+            System.out.println("La cantidad que se invirtio es de: " + inversion);
+            System.out.println("La cantidad a pagar del credito: " + total);
+            System.out.println("La cantidad a pagar de credito: " + interes);
+            System.out.println("La cantidad a pagar de interes: " + prestamo);
+        }else if (valor_pieza<=monto_total) {
+            double inversion = (valor_pieza*70)/100;
+            double prestamo = (valor_pieza*30)/100;
+            double interes = (prestamo*20)/100;
+            System.out.println("La cantidad que se invirtio es de: " + inversion);
+            System.out.println("La cantidad a pagar de interes: " + interes);
+            System.out.println("La cantidad a pagar de credito: " + prestamo);
+        }
+
+    }
 }
