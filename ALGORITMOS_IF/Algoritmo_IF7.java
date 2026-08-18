@@ -7,7 +7,27 @@ package ALGORITMOS_IF;
 public class Algoritmo_IF7 {
     public static void main(String[] args) {
         
-        
+        int A;
+        int B;
+        int C;
+        int D;
+
+        System.out.println("Ingrese numero para A: ");
+        A = Integer.parseInt(System.console().readLine());
+        System.out.println("Ingrese numero para B: ");
+        B = Integer.parseInt(System.console().readLine());
+        System.out.println("Ingrese numero para C: ");
+        C = Integer.parseInt(System.console().readLine());
+        System.out.println("Ingrese numero para D: ");
+        D = Integer.parseInt(System.console().readLine());
+
+        if(C<5){
+            int redon_menor = (A*1000)+(B*100);
+            System.out.println("El numero redondeado es1: " + redon_menor);
+        }else if (C>=5){
+            int redon_mayor = (A*1000)+((B+1)*100);
+            System.out.println("El numero redondeado es2: " + redon_mayor);
+        }
 
     }
 }

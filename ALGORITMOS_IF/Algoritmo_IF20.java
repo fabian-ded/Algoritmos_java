@@ -13,5 +13,38 @@ de que fuera necesario, a cuánto ascendería la cantidad que se pediría al ban
 package ALGORITMOS_IF;
 
 public class Algoritmo_IF20 {
-    
+    public static void main(String[] args) {
+
+        double capital;
+        double prestamo;
+        double presupuesto;
+
+        System.out.println("Ingrese el capital actual: ");
+        capital = Double.parseDouble(System.console().readLine());
+
+        if (capital < 10000) {
+
+            prestamo = 10000 - capital;
+            presupuesto = capital + prestamo;
+
+        } else if (capital <= 20000) {
+
+            prestamo = 20000 - capital;
+            presupuesto = capital + prestamo;
+
+        } else {
+
+            prestamo = 0;
+            presupuesto = capital;
+        }
+
+        double restante = presupuesto - 5000 - 2000;
+
+        double insumos = restante / 2;
+        double incentivos = restante / 2;
+
+        System.out.println("Cantidad del prestamo: " + prestamo);
+        System.out.println("Cantidad para compra de insumos: " + insumos);
+        System.out.println("Cantidad para incentivos al personal: " + incentivos);
+    }
 }

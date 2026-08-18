@@ -16,5 +16,62 @@ Desarrolle un algoritmo que indique, si una persona tiene Anemia o no. */
 package ALGORITMOS_IF;
 
 public class Algoritmo_IF19 {
-    
+    public static void main(String[] args) {
+
+        int edadMeses;
+        double hemoglobina;
+        String sexo;
+
+        System.out.println("Ingrese la edad en meses: ");
+        edadMeses = Integer.parseInt(System.console().readLine());
+
+        System.out.println("Ingrese el nivel de hemoglobina: ");
+        hemoglobina = Double.parseDouble(System.console().readLine());
+
+        System.out.println("Ingrese el sexo (M para mujer / H para hombre): ");
+        sexo = System.console().readLine();
+
+        double minimo = 0;
+
+        if (edadMeses >= 0 && edadMeses <= 1) {
+
+            minimo = 13;
+
+        } else if (edadMeses > 1 && edadMeses <= 6) {
+
+            minimo = 10;
+
+        } else if (edadMeses > 6 && edadMeses <= 12) {
+
+            minimo = 11;
+
+        } else if (edadMeses > 12 && edadMeses <= 60) {
+
+            minimo = 11.5;
+
+        } else if (edadMeses > 60 && edadMeses <= 120) {
+
+            minimo = 12.6;
+
+        } else if (edadMeses > 120 && edadMeses <= 180) {
+
+            minimo = 13;
+
+        } else if (edadMeses > 180 && sexo.equalsIgnoreCase("M")) {
+
+            minimo = 12;
+
+        } else if (edadMeses > 180 && sexo.equalsIgnoreCase("H")) {
+
+            minimo = 14;
+        }
+
+        if (hemoglobina < minimo) {
+            System.out.println("Resultado positivo: La persona tiene anemia.");
+        } else {
+            System.out.println("Resultado negativo: La persona no tiene anemia.");
+        }
+
+        System.out.println("Nivel minimo de hemoglobina permitido: " + minimo + " g%");
+    }
 }

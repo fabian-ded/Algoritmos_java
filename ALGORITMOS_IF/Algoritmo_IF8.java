@@ -10,5 +10,30 @@ las distancias mayores a 1000. */
 package ALGORITMOS_IF;
 
 public class Algoritmo_IF8 {
-    
+    public static void main(String[] args) {
+        
+        double km;
+        double cancelar = 5000;
+        double adiccional_km = 200;
+
+        System.out.println("Ingrese los kilometros recorrido: ");
+        km = Double.parseDouble(System.console().readLine());
+
+        if(km>=1000){
+            double adiccional = 1000-300;
+            double mas = adiccional*adiccional_km;
+            double mas_mil = km-1000;
+            double mas_valor = mas_mil * 150;
+            double total = cancelar + mas + mas_valor;
+            System.out.println("Valor a pagar por superar los 1000Km es de: " + total );
+        }else if(km>=300){
+            double adiccional = km-300;
+            double mas = adiccional*adiccional_km;
+            double total = mas + cancelar;
+            System.out.println("Valor a pagar por superar los 300Km es de: " + total );
+        }else if (km<300) {
+            System.out.println("Valor a pagar por no superar los 300Km es de: " + cancelar );
+        }
+
+    }
 }

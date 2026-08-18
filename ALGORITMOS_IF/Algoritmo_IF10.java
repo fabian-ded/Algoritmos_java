@@ -10,5 +10,47 @@ Calcule y muestre el nombre del cliente, el monto de la compra, monto a pagar y 
 package ALGORITMOS_IF;
 
 public class Algoritmo_IF10 {
-    
+    public static void main(String[] args) {
+        
+        double valor;
+        String Nombre;
+        
+        System.out.println("Nombre del cliente: ");
+        Nombre = System.console().readLine();
+        System.out.println("Valor de la compra: ");
+        valor = Double.parseDouble(System.console().readLine());
+        
+        if(valor>=15000){
+            int descuento = (int) ((valor)-(valor * 0.25));
+            System.out.println("Nombre del cliente: " + Nombre);
+            System.out.println("Monto de la compra: " + valor);
+            System.out.println("Valor a pagar: " + valor);
+            System.out.println("Valor de la compra con descuento del 25%: " + descuento);
+        }else if (valor>=7000) {
+            int descuento = (int) ((valor)-(valor * 0.18));
+            System.out.println("Nombre del cliente: " + Nombre);
+            System.out.println("Monto de la compra: " + valor);
+            System.out.println("Valor a pagar: " + valor);
+            System.out.println("Valor de la compra con descuento del 18%: " + descuento);
+        }else if (valor>=1000) {
+            int descuento = (int) ((valor)-(valor * 0.11));
+            System.out.println("Nombre del cliente: " + Nombre);
+            System.out.println("Monto de la compra: " + valor);
+            System.out.println("Valor a pagar: " + valor);
+            System.out.println("Valor de la compra con descuento del 11%: " + descuento);
+        }else if (valor>=500) {
+            int descuento = (int) ((valor)-(valor * 0.5));
+            System.out.println("Nombre del cliente: " + Nombre);
+            System.out.println("Monto de la compra: " + valor);
+            System.out.println("Valor a pagar: " + valor);
+            System.out.println("Valor de la compra con descuento del 5%: " + descuento);
+        }else{
+            System.out.println("Nombre del cliente: " + Nombre);
+            System.out.println("Monto de la compra: " + valor);
+            System.out.println("Valor a pagar: " + valor);
+            System.out.println("Valor de la compra es de: " + valor);
+        }
+        
+
+    }
 }
