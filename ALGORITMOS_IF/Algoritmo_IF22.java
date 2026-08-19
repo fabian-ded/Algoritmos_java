@@ -42,4 +42,4 @@ public class Algoritmo_IF22 {
             System.out.println("La ecuacion no tiene soluciones reales.");
         }
     }
-}
+} 
