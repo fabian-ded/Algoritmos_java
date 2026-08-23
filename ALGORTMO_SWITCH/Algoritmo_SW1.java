@@ -1,4 +1,4 @@
-package ALGORTMO_SW;
+package ALGORTMO_SWITCH;
 
 public class Algoritmo_SW1 {
     public static void main(String[] args) {

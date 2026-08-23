@@ -11,7 +11,7 @@ public class Algoritmo_IF9 {
          
         System.out.println("Ingrese numero P: ");
         P = Integer.parseInt(System.console().readLine());
-        System.out.println("Ingrese numero P: ");
+        System.out.println("Ingrese numero Q: ");
         Q = Integer.parseInt(System.console().readLine());
 
         double resultadoP3 = Math.pow(P, 3);
