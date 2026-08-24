@@ -24,7 +24,6 @@ public class Algoritmo_IF13 {
         if (caben1 >= 50000) {
             int billetes = caben1 / 50000;
             caben2 = caben1 - (billetes * 50000);
-
             System.out.println("Billetes de 50000: " + billetes);
         } else {
             caben2 = caben1;

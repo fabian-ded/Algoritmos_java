@@ -20,7 +20,7 @@ public class Algoritmo_IF11 {
 
         System.out.println("Ingrese sueldo: ");
         sueldo = Double.parseDouble(System.console().readLine());
-        System.out.println("Ingrese su categoria: ");
+        System.out.println("Ingrese su categoria del 1 al 4: ");
         categoria = Double.parseDouble(System.console().readLine());
 
         if(categoria==1){

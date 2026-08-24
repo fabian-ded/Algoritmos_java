@@ -31,12 +31,12 @@ public class Algoritmo_IF16 {
 
         if (perdidaAuto <= mitadGanancia) {
             System.out.println("Debe comprar el automovil.");
+            System.out.println("Mitad de la ganancia del terreno: " + mitadGanancia);
         } else {
             System.out.println("No debe comprar el automovil.");
+            System.out.println("Perdida del automovil: " + perdidaAuto);
+            System.out.println("Ganancia del terreno: " + gananciaTerreno);
         }
 
-        System.out.println("Perdida del automovil: " + perdidaAuto);
-        System.out.println("Ganancia del terreno: " + gananciaTerreno);
-        System.out.println("Mitad de la ganancia del terreno: " + mitadGanancia);
     }
 }
