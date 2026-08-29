@@ -1,22 +1,20 @@
+/* Escriba un programa que imprima todos los enteros positivos impares menores que 100
+omitiéndose aquellos que sean divisibles por 7. */
+
 package BUCLES.DO_WHILE;
-import java.util.Scanner;
+
 public class Ejercicio2 {
     public static void main(String[] args) {
 
-        double F,C,R,K;
-        int fin = 0;
-        Scanner Entrada = new Scanner(System.in);
-        System. out. println("Ingnese La tempenatura en Fahrenheit: ");
-        F = Entrada.nextDouble();
-        C = 5*(F-32) /9;
-        R = F+459.67;
-        K = C + 273.15;
+        int numero = 1;
+
         do {
-            fin++;
-            System.out.println("La temperatura en Celsius: " + C);
-            System.out.println("La temperatuna en Rankine: " + R);
-            System.out.println("La temperatura en Kelvin: " + K);
-        }
-            while (fin == 0);
+            System.out.println(numero);
+            numero += 2;
+            if (numero % 7 == 0) {
+                numero += 2;
+            }
+        } while (numero < 100);
+
     }
 }
