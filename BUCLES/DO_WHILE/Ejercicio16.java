@@ -11,6 +11,35 @@ e. 3 56
 f. 1 112 */
 
 package BUCLES.DO_WHILE;
+import java.util.Scanner;
 
 public class Ejercicio16 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int multiplicador;
+        int multiplicando;
+        int suma = 0;
+
+        System.out.println("Ingrese el primer número:");
+        multiplicador = entrada.nextInt();
+
+        System.out.println("Ingrese el segundo número:");
+        multiplicando = entrada.nextInt();
+
+        do {
+
+            if (multiplicador % 2 != 0) {
+                suma += multiplicando;
+            }
+
+            multiplicador /= 2;
+            multiplicando *= 2;
+
+        } while (multiplicador >= 1);
+
+        System.out.println("El resultado de la multiplicación es: " + suma);
+    }
 }

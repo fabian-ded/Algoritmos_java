@@ -7,6 +7,35 @@ reciba tres entradas: el capital a depositar, la tasa de interés y la duración
 y calcule el capital total acumulado al final del período de tiempo especificado. */
 
 package BUCLES.DO_WHILE;
+import java.util.Scanner;
 
 public class Ejercicio13 {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+        double capital;
+        double taza_interes;
+        double interes;
+        int semanas;
+        int contador = 0;
+
+        System.out.println("Ingrese el capital: ");
+        capital = entrada.nextDouble();
+
+        System.out.println("Ingrese el interes: ");
+        interes = entrada.nextInt();
+
+        System.out.println("Ingrese las semanas: ");
+        semanas = entrada.nextInt();
+
+        int dias = semanas*7;
+        double convertir = interes/100;
+
+        do {
+            contador++;
+            taza_interes = (convertir*capital)/365;
+            capital += taza_interes;
+        } while (contador <= dias);
+        System.out.println("El capital tuvo una ganacia de: " + capital);
+    }
 }
