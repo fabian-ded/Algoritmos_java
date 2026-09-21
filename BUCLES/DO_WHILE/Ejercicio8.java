@@ -105,7 +105,6 @@ public class Ejercicio8 {
             }
 
             sumaEdades += edad;
-
             totalSueldos += sueldo;
 
             System.out.println("Nombre: " + nombre);
@@ -117,8 +116,6 @@ public class Ejercicio8 {
         } while (contador < num_empleados);
 
         double promedioEdad = (double) sumaEdades / num_empleados;
-
-        System.out.println("\n========== RESULTADOS ==========");
 
         System.out.println("Venezolanos tipo 1: " + totalVenezolanosTipo1);
         System.out.println("Venezolanos tipo 2: " + totalVenezolanosTipo2);
