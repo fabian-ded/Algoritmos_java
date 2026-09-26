@@ -1,7 +1,9 @@
 package BUCLES.WHILE;
+
 import java.util.Scanner;
 
 public class Ejercicio26 {
+
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
@@ -52,17 +54,14 @@ public class Ejercicio26 {
             System.out.println("Ingrese el estado:");
             estado = entrada.nextLine();
 
-            // Contar huérfanos del Táchira
             if (estado.equalsIgnoreCase("Tachira")) {
                 tachira++;
             }
 
-            // Contar huérfanos del Distrito Capital
             if (estado.equalsIgnoreCase("Distrito Capital")) {
                 distritoCapital++;
             }
 
-            // Clasificar por grupo de edad
             if (edad < 1) {
 
                 grupo1++;
@@ -80,7 +79,6 @@ public class Ejercicio26 {
                 grupo4++;
             }
 
-            // Contar niños y niñas
             if (sexo.equalsIgnoreCase("M")) {
 
                 ninos++;
@@ -91,59 +89,26 @@ public class Ejercicio26 {
             }
         }
 
-        // Porcentajes de Táchira y Distrito Capital
-        double porcentajeTachira =
-                (double) tachira / totalHuerfanos * 100;
-
-        double porcentajeDistritoCapital =
-                (double) distritoCapital / totalHuerfanos * 100;
-
-        // Porcentajes de niños y niñas
-        double porcentajeNinos =
-                (double) ninos / totalHuerfanos * 100;
-
-        double porcentajeNinas =
-                (double) ninas / totalHuerfanos * 100;
+        double porcentajeTachira = (double) tachira / totalHuerfanos * 100;
+        double porcentajeDistritoCapital = (double) distritoCapital / totalHuerfanos * 100;
+        double porcentajeNinos = (double) ninos / totalHuerfanos * 100;
+        double porcentajeNinas = (double) ninas / totalHuerfanos * 100;
 
         System.out.println("\n========== RESULTADOS ==========");
+        System.out.println("\na. Huérfanos del Estado Táchira: " + tachira);
+        System.out.println("Porcentaje de Táchira: " + porcentajeTachira + "%");
+        System.out.println("Huérfanos del Distrito Capital: " + distritoCapital);
+        System.out.println("Porcentaje del Distrito Capital: " + porcentajeDistritoCapital + "%");
 
-        // a
-        System.out.println("\na. Huérfanos del Estado Táchira: "
-                + tachira);
-
-        System.out.println("Porcentaje de Táchira: "
-                + porcentajeTachira + "%");
-
-        System.out.println("Huérfanos del Distrito Capital: "
-                + distritoCapital);
-
-        System.out.println("Porcentaje del Distrito Capital: "
-                + porcentajeDistritoCapital + "%");
-
-        // b
         System.out.println("\nb. Huérfanos por grupo de edad:");
+        System.out.println("Grupo 1 - Menores de 1 año: " + grupo1);
+        System.out.println("Grupo 2 - Entre 1 y 3 años: " + grupo2);
+        System.out.println("Grupo 3 - Entre 4 y 6 años: " + grupo3);
+        System.out.println("Grupo 4 - Mayores de 6 años: " + grupo4);
 
-        System.out.println("Grupo 1 - Menores de 1 año: "
-                + grupo1);
-
-        System.out.println("Grupo 2 - Entre 1 y 3 años: "
-                + grupo2);
-
-        System.out.println("Grupo 3 - Entre 4 y 6 años: "
-                + grupo3);
-
-        System.out.println("Grupo 4 - Mayores de 6 años: "
-                + grupo4);
-
-        // c
         System.out.println("\nc. Cantidad de niños: " + ninos);
-
-        System.out.println("Porcentaje de niños: "
-                + porcentajeNinos + "%");
-
+        System.out.println("Porcentaje de niños: " + porcentajeNinos + "%");
         System.out.println("Cantidad de niñas: " + ninas);
-
-        System.out.println("Porcentaje de niñas: "
-                + porcentajeNinas + "%");
+        System.out.println("Porcentaje de niñas: " + porcentajeNinas + "%");
     }
 }

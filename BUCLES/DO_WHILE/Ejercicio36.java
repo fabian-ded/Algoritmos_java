@@ -31,11 +31,9 @@ public class Ejercicio36 {
 
         int cantidadEstados;
         int estado = 1;
-
         System.out.println("Ingrese la cantidad de estados:");
         cantidadEstados = entrada.nextInt();
 
-        // Variable para controlar el estado
         do {
 
             System.out.println("\n========== ESTADO #" + estado + " ==========");
@@ -64,23 +62,17 @@ public class Ejercicio36 {
             do {
 
                 System.out.println("\n---------- CIUDAD #" + ciudad + " ----------");
-
                 int codigoCiudad;
                 String nombreCiudad;
                 int unidadesEsperadas;
                 int cantidadCanales;
-
                 System.out.println("Ingrese el código de la ciudad:");
                 codigoCiudad = entrada.nextInt();
-
                 entrada.nextLine();
-
                 System.out.println("Ingrese el nombre de la ciudad:");
                 nombreCiudad = entrada.nextLine();
-
                 System.out.println("Ingrese la cantidad de unidades esperadas:");
                 unidadesEsperadas = entrada.nextInt();
-
                 System.out.println("Ingrese la cantidad de canales:");
                 cantidadCanales = entrada.nextInt();
 
@@ -99,29 +91,20 @@ public class Ejercicio36 {
 
                 do {
 
-                    System.out.println(
-                            "\n------ CANAL #" + canal + " ------"
-                    );
-
+                    System.out.println("\n------ CANAL #" + canal + " ------");
                     int codigoCanal;
                     int cantidadVendedores;
-
                     System.out.println("Ingrese el código del canal:");
                     codigoCanal = entrada.nextInt();
-
                     System.out.println("Ingrese la cantidad de vendedores:");
                     cantidadVendedores = entrada.nextInt();
 
                     int vendedor = 1;
-
                     double totalVentaCanal = 0;
 
                     do {
 
-                        System.out.println(
-                                "\nVendedor #" + vendedor
-                        );
-
+                        System.out.println("\nVendedor #" + vendedor);
                         int codigoVendedor;
                         int unidadesVendidas;
                         double montoVendido;
@@ -135,205 +118,75 @@ public class Ejercicio36 {
                         System.out.println("Ingrese el monto total vendido:");
                         montoVendido = entrada.nextDouble();
 
-                        /*
-                         * Acumulamos las unidades y el monto
-                         * vendido por la ciudad.
-                         */
                         totalUnidadesCiudad += unidadesVendidas;
                         totalBrutoCiudad += montoVendido;
 
-                        /*
-                         * Acumulamos la venta del canal.
-                         */
                         totalVentaCanal += montoVendido;
 
-                        /*
-                         * El código comienza por 11:
-                         * vendedor de tienda.
-                         */
                         int tipoVendedor = codigoVendedor / 1000;
 
                         if (tipoVendedor == 11) {
-
                             comisionTiendaCiudad += montoVendido * 0.10;
-
                         } else if (tipoVendedor == 12) {
-
                             comisionCalleCiudad += montoVendido * 0.15;
                         }
-
-                        /*
-                         * Buscamos el vendedor que vendió
-                         * menor cantidad de unidades.
-                         */
                         if (unidadesVendidas < menorUnidadesVendedor) {
-
                             menorUnidadesVendedor = unidadesVendidas;
                             codigoVendedorMenorUnidades = codigoVendedor;
                         }
-
                         vendedor++;
 
                     } while (vendedor <= cantidadVendedores);
 
-                    /*
-                     * Buscamos el canal con mayor monto
-                     * neto de venta.
-                     */
                     double comisionCanal = 0;
-
-                    /*
-                     * Para determinar el tipo de vendedor del canal
-                     * se utilizan las comisiones acumuladas.
-                     *
-                     * El monto neto será:
-                     * venta bruta - comisión.
-                     */
-                    double ventaNetaCanal =
-                            totalVentaCanal - comisionCanal;
+                    double ventaNetaCanal = totalVentaCanal - comisionCanal;
 
                     if (ventaNetaCanal > mayorVentaCanal) {
-
                         mayorVentaCanal = ventaNetaCanal;
                         codigoCanalMayorVenta = codigoCanal;
                     }
-
                     canal++;
 
                 } while (canal <= cantidadCanales);
 
-                /*
-                 * El monto neto total de la ciudad.
-                 */
-                double totalComisionesCiudad =
-                        comisionTiendaCiudad + comisionCalleCiudad;
-
-                double montoNetoCiudad =
-                        totalBrutoCiudad - totalComisionesCiudad;
-
-                /*
-                 * Acumulamos el monto neto de la ciudad
-                 * para obtener posteriormente el total del Estado.
-                 */
+                double totalComisionesCiudad = comisionTiendaCiudad + comisionCalleCiudad;
+                double montoNetoCiudad = totalBrutoCiudad - totalComisionesCiudad;
                 totalNetoEstado += montoNetoCiudad;
-
-                /*
-                 * Porcentaje de unidades alcanzadas
-                 * respecto a las unidades esperadas.
-                 */
                 double porcentajeEsperado = 0;
 
                 if (unidadesEsperadas > 0) {
-
-                    porcentajeEsperado =
-                            (double) totalUnidadesCiudad
-                                    / unidadesEsperadas * 100;
+                    porcentajeEsperado = (double) totalUnidadesCiudad / unidadesEsperadas * 100;
                 }
 
-                /*
-                 * Si vendió menos del 100% de lo esperado,
-                 * la ciudad no alcanzó la meta.
-                 */
                 if (totalUnidadesCiudad < unidadesEsperadas) {
-
                     ciudadesNoAlcanzaron++;
                 }
 
-                /*
-                 * Entre 40% y 60% por encima de lo esperado:
-                 *
-                 * 40% por encima = 140%
-                 * 60% por encima = 160%
-                 */
-                if (porcentajeEsperado >= 140
-                        && porcentajeEsperado <= 160) {
-
+                if (porcentajeEsperado >= 140 && porcentajeEsperado <= 160) {
                     ciudadesEntre40y60++;
                 }
 
                 System.out.println("\n===== RESULTADO DE LA CIUDAD =====");
-
-                System.out.println(
-                        "Código: " + codigoCiudad
-                );
-
-                System.out.println(
-                        "Nombre: " + nombreCiudad
-                );
-
-                System.out.println(
-                        "Total unidades vendidas: "
-                                + totalUnidadesCiudad
-                );
-
-                System.out.println(
-                        "Monto bruto: $"
-                                + totalBrutoCiudad
-                );
-
-                System.out.println(
-                        "Comisión vendedores de tienda: $"
-                                + comisionTiendaCiudad
-                );
-
-                System.out.println(
-                        "Comisión vendedores de calle: $"
-                                + comisionCalleCiudad
-                );
-
-                System.out.println(
-                        "Canal con mayor monto neto: "
-                                + codigoCanalMayorVenta
-                );
-
-                System.out.println(
-                        "Vendedor con menor número de unidades: "
-                                + codigoVendedorMenorUnidades
-                );
-
+                System.out.println("Código: " + codigoCiudad);
+                System.out.println("Nombre: " + nombreCiudad);
+                System.out.println("Total unidades vendidas: " + totalUnidadesCiudad);
+                System.out.println("Monto bruto: $" + totalBrutoCiudad);
+                System.out.println("Comisión vendedores de tienda: $" + comisionTiendaCiudad);
+                System.out.println("Comisión vendedores de calle: $" + comisionCalleCiudad);
+                System.out.println("Canal con mayor monto neto: " + codigoCanalMayorVenta);
+                System.out.println("Vendedor con menor número de unidades: " + codigoVendedorMenorUnidades);
                 ciudad++;
 
             } while (ciudad <= cantidadCiudades);
 
-            /*
-             * Porcentaje de ciudades que no alcanzaron
-             * las unidades esperadas.
-             */
-            double porcentajeNoAlcanzaron =
-                    (double) ciudadesNoAlcanzaron
-                            / cantidadCiudades * 100;
-
-            System.out.println(
-                    "\n========== RESULTADO DEL ESTADO =========="
-            );
-
-            System.out.println(
-                    "Código del Estado: " + codigoEstado
-            );
-
-            System.out.println(
-                    "Nombre del Estado: " + nombreEstado
-            );
-
-            System.out.println(
-                    "Monto neto vendido: $"
-                            + totalNetoEstado
-            );
-
-            System.out.println(
-                    "Porcentaje de ciudades que no alcanzaron "
-                            + "lo esperado: "
-                            + porcentajeNoAlcanzaron + "%"
-            );
-
-            System.out.println(
-                    "Cantidad de ciudades entre 40% y 60% "
-                            + "por encima de lo esperado: "
-                            + ciudadesEntre40y60
-            );
-
+            double porcentajeNoAlcanzaron = (double) ciudadesNoAlcanzaron / cantidadCiudades * 100;
+            System.out.println("\n========== RESULTADO DEL ESTADO ==========");
+            System.out.println("Código del Estado: " + codigoEstado);
+            System.out.println("Nombre del Estado: " + nombreEstado);
+            System.out.println("Monto neto vendido: $" + totalNetoEstado);
+            System.out.println("Porcentaje de ciudades que no alcanzaron " + "lo esperado: " + porcentajeNoAlcanzaron + "%");
+            System.out.println("Cantidad de ciudades entre 40% y 60% " + "por encima de lo esperado: " + ciudadesEntre40y60);
             estado++;
-
         } while (estado <= cantidadEstados);
 
     }

@@ -45,7 +45,7 @@ public class Ejercicio21 {
             System.out.println("Ingrese la cantidad de pasajeros:");
             cantidadPasajeros = entrada.nextInt();
 
-            pasajero = 1;
+            pasajero = 0;
             montoTotalVuelo = 0;
 
             mayorPesoPasajero = 0;
@@ -54,6 +54,8 @@ public class Ejercicio21 {
             while (pasajero <= cantidadPasajeros) {
 
                 System.out.println("\n----- PASAJERO #" + pasajero + " -----");
+
+                entrada.nextLine();
 
                 System.out.println("Ingrese el código de abordo:");
                 codigoAbordo = entrada.nextInt();
@@ -65,26 +67,20 @@ public class Ejercicio21 {
 
                 System.out.println("Ingrese la cantidad de maletas:");
                 cantidadMaletas = entrada.nextInt();
-
                 pesoTotal = 0;
-
                 mayorPesoMaleta = 0;
                 codigoMaletaMayor = "";
-
-                maleta = 1;
+                maleta = 0;
 
                 while (maleta <= cantidadMaletas) {
 
                     entrada.nextLine();
-
                     System.out.println("Ingrese el código de la maleta:");
                     String codigoMaleta = entrada.nextLine();
-
                     System.out.println("Ingrese el peso de la maleta en Kg:");
                     peso = entrada.nextDouble();
 
                     pesoTotal += peso;
-
                     if (peso >= 1 && peso <= 3) {
                         monto = 0;
                     } else if (peso <= 6) {
@@ -105,15 +101,30 @@ public class Ejercicio21 {
                         mayorPesoMaleta = peso;
                         codigoMaletaMayor = codigoMaleta;
                     }
-
                     maleta++;
+
+                };
+
+                if (pesoTotal >= 1 && pesoTotal <= 3) {
+                    monto = 0;
+                } else if (pesoTotal <= 6) {
+                    monto = pesoTotal * 600;
+                } else if (pesoTotal <= 9) {
+                    monto = pesoTotal * 1200;
+                } else if (pesoTotal <= 12) {
+                    monto = pesoTotal * 1500;
+                } else if (pesoTotal <= 15) {
+                    monto = pesoTotal * 2000;
+
+                } else {
+                    monto = pesoTotal * 2500;
                 }
 
                 System.out.println("\nNúmero de vuelo: " + numeroVuelo);
                 System.out.println("Código de abordo: " + codigoAbordo);
                 System.out.println("Nombre: " + nombre);
                 System.out.println("Peso total del equipaje: " + pesoTotal + " Kg");
-                System.out.println("Monto a pagar: $" + calcularMonto(pesoTotal));
+                System.out.println("Monto a pagar: $" + monto);
 
                 if (pesoTotal > mayorPesoPasajero) {
                     mayorPesoPasajero = pesoTotal;
@@ -123,62 +134,26 @@ public class Ejercicio21 {
                     menorPesoPasajero = pesoTotal;
                 }
 
-                if (calcularMonto(pesoTotal) == 0) {
+                if (monto == 0) {
                     pasajerosSinPago++;
                 }
-
                 totalPasajeros++;
-
-                System.out.println(
-                        "Maleta de mayor peso: "
-                                + codigoMaletaMayor
-                                + " - "
-                                + mayorPesoMaleta
-                                + " Kg"
-                );
-
+                System.out.println("Maleta de mayor peso: " + codigoMaletaMayor + " - " + mayorPesoMaleta + " Kg");
                 pasajero++;
-            }
+
+            };
 
             System.out.println("\n========== RESUMEN DEL VUELO ==========");
             System.out.println("Número de vuelo: " + numeroVuelo);
             System.out.println("Monto total cancelado por equipaje: $" + montoTotalVuelo);
-            System.out.println("Mayor peso total de equipaje de un pasajero: "
-                    + mayorPesoPasajero + " Kg");
-            System.out.println("Menor peso total de equipaje de un pasajero: "
-                    + menorPesoPasajero + " Kg");
-
+            System.out.println("Mayor peso total de equipaje de un pasajero: " + mayorPesoPasajero + " Kg");
+            System.out.println("Menor peso total de equipaje de un pasajero: " + menorPesoPasajero + " Kg");
             vuelo++;
-        }
 
-        double porcentajeSinPago =
-                (double) pasajerosSinPago / totalPasajeros * 100;
+        };
 
+        double porcentajeSinPago = (double) pasajerosSinPago / totalPasajeros * 100;
         System.out.println("\n========== RESULTADOS GENERALES ==========");
-        System.out.println(
-                "Porcentaje de pasajeros que no pagaron por equipaje: "
-                        + porcentajeSinPago + "%"
-        );
-    }
-
-    public static double calcularMonto(double peso) {
-
-        double monto;
-
-        if (peso >= 1 && peso <= 3) {
-            monto = 0;
-        } else if (peso <= 6) {
-            monto = peso * 600;
-        } else if (peso <= 9) {
-            monto = peso * 1200;
-        } else if (peso <= 12) {
-            monto = peso * 1500;
-        } else if (peso <= 15) {
-            monto = peso * 2000;
-        } else {
-            monto = peso * 2500;
-        }
-
-        return monto;
+        System.out.println("Porcentaje de pasajeros que no pagaron por equipaje: " + porcentajeSinPago + "%");
     }
 }

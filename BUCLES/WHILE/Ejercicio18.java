@@ -34,7 +34,7 @@ public class Ejercicio18 {
         int hombresSolteros = 0;
         int mujeresSolteras = 0;
 
-        String continuar = "si";
+        String continuar="si";
 
         while (continuar.equalsIgnoreCase("si")) {
 
@@ -126,103 +126,35 @@ public class Ejercicio18 {
 
             System.out.println("\n¿Desea ingresar otro alumno? (si/no)");
             continuar = entrada.nextLine();
-        }
 
-        double promedioMujeres = 0;
-        double promedioHombres = 0;
+        };
 
-        if (totalMujeres > 0) {
-            promedioMujeres =
-                    (double) sumaEdadMujeres / totalMujeres;
-        }
-
-        if (totalHombres > 0) {
-            promedioHombres =
-                    (double) sumaEdadHombres / totalHombres;
-        }
-
-        double porcentajeSolteros =
-                (double) solteros / totalAlumnos * 100;
-
-        double porcentajeCasados =
-                (double) casados / totalAlumnos * 100;
-
-        double porcentajeDivorciados =
-                (double) divorciados / totalAlumnos * 100;
-
-        double porcentajeViudos =
-                (double) viudos / totalAlumnos * 100;
-
-        double porcentajeProgramacion =
-                (double) programacion / totalAlumnos * 100;
-
-        double porcentajeSistemas =
-                (double) sistemas / totalAlumnos * 100;
-
-        double porcentajeAdministracion =
-                (double) administracion / totalAlumnos * 100;
-
-        double porcentajeMujeresAdultas = 0;
-        double porcentajeHombresJovenes = 0;
-
-        if (totalMujeres > 0) {
-            porcentajeMujeresAdultas =
-                    (double) mujeresAdultas / totalMujeres * 100;
-        }
-
-        if (totalHombres > 0) {
-            porcentajeHombresJovenes =
-                    (double) hombresJovenes / totalHombres * 100;
-        }
-
+        double promedioMujeres = (double) sumaEdadMujeres / totalMujeres;
+        double promedioHombres = (double) sumaEdadHombres / totalHombres;
+        double porcentajeSolteros = (double) solteros / totalAlumnos * 100;
+        double porcentajeCasados = (double) casados / totalAlumnos * 100;
+        double porcentajeDivorciados = (double) divorciados / totalAlumnos * 100;
+        double porcentajeViudos = (double) viudos / totalAlumnos * 100;
+        double porcentajeProgramacion = (double) programacion / totalAlumnos * 100;
+        double porcentajeSistemas = (double) sistemas / totalAlumnos * 100;
+        double porcentajeAdministracion = (double) administracion / totalAlumnos * 100;
+        double porcentajeMujeresAdultas = (double) mujeresAdultas / totalMujeres * 100;
+        double porcentajeHombresJovenes = (double) hombresJovenes / totalHombres * 100;
         System.out.println("\n========== RESULTADOS ==========");
-
-        System.out.println("a. Promedio de edad de las mujeres: "
-                + promedioMujeres);
-
-        System.out.println("b. Promedio de edad de los hombres: "
-                + promedioHombres);
-
-        System.out.println("c. Cantidad de hombres: "
-                + totalHombres);
-
-        System.out.println("   Cantidad de mujeres: "
-                + totalMujeres);
-
-        System.out.println("d. Porcentaje de solteros: "
-                + porcentajeSolteros + "%");
-
-        System.out.println("   Porcentaje de casados: "
-                + porcentajeCasados + "%");
-
-        System.out.println("   Porcentaje de divorciados: "
-                + porcentajeDivorciados + "%");
-
-        System.out.println("   Porcentaje de viudos: "
-                + porcentajeViudos + "%");
-
-        System.out.println("e. Programacion: "
-                + programacion + " alumnos - "
-                + porcentajeProgramacion + "%");
-
-        System.out.println("   Sistemas: "
-                + sistemas + " alumnos - "
-                + porcentajeSistemas + "%");
-
-        System.out.println("   Administracion: "
-                + administracion + " alumnos - "
-                + porcentajeAdministracion + "%");
-
-        System.out.println("f. Porcentaje de mujeres adultas: "
-                + porcentajeMujeresAdultas + "%");
-
-        System.out.println("g. Porcentaje de hombres jóvenes: "
-                + porcentajeHombresJovenes + "%");
-
-        System.out.println("h. Hombres solteros: "
-                + hombresSolteros);
-
-        System.out.println("   Mujeres solteras: "
-                + mujeresSolteras);
+        System.out.println("a. Promedio de edad de las mujeres: " + promedioMujeres);
+        System.out.println("b. Promedio de edad de los hombres: " + promedioHombres);
+        System.out.println("c. Cantidad de hombres: " + totalHombres);
+        System.out.println("   Cantidad de mujeres: " + totalMujeres);
+        System.out.println("d. Porcentaje de solteros: " + porcentajeSolteros + "%");
+        System.out.println("   Porcentaje de casados: " + porcentajeCasados + "%");
+        System.out.println("   Porcentaje de divorciados: " + porcentajeDivorciados + "%");
+        System.out.println("   Porcentaje de viudos: " + porcentajeViudos + "%");
+        System.out.println("e. Programacion: " + programacion + " alumnos - " + porcentajeProgramacion + "%");
+        System.out.println("   Sistemas: " + sistemas + " alumnos - " + porcentajeSistemas + "%");
+        System.out.println("   Administracion: " + administracion + " alumnos - " + porcentajeAdministracion + "%");
+        System.out.println("f. Porcentaje de mujeres adultas: " + porcentajeMujeresAdultas + "%");
+        System.out.println("g. Porcentaje de hombres jóvenes: " + porcentajeHombresJovenes + "%");
+        System.out.println("h. Hombres solteros: " + hombresSolteros);
+        System.out.println("   Mujeres solteras: " + mujeresSolteras);
     }
 }

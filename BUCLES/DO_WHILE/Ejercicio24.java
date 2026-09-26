@@ -19,7 +19,6 @@ public class Ejercicio24 {
             int divisor = 1;
             int sumaA = 0;
 
-            // Buscar divisores de A
             do {
 
                 if (numero % divisor == 0) {
@@ -31,38 +30,23 @@ public class Ejercicio24 {
             } while (divisor < numero);
 
             int B = sumaA;
-
-            // Evitar comprobar el mismo número consigo mismo
             if (B > numero) {
-
                 int divisorB = 1;
                 int sumaB = 0;
 
-                // Buscar divisores de B
                 do {
-
                     if (B % divisorB == 0) {
                         sumaB += divisorB;
                     }
-
                     divisorB++;
-
                 } while (divisorB < B);
 
-                // Comprobar si son amigos
                 if (sumaB == numero) {
-
-                    System.out.println(
-                            "Par de números amigos: "
-                                    + numero + " y " + B
-                    );
-
+                    System.out.println("Par de números amigos: " + numero + " y " + B);
                     encontrados++;
                 }
             }
-
             numero++;
-
         } while (encontrados < 5);
     }
 }

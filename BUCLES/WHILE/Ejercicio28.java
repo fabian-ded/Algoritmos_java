@@ -1,7 +1,9 @@
 package BUCLES.WHILE;
+
 import java.util.Scanner;
 
 public class Ejercicio28 {
+
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
@@ -129,69 +131,34 @@ public class Ejercicio28 {
                         System.out.println("Monto del pagaré:");
                         double montoPagare = entrada.nextDouble();
 
-                        int fechaVencimiento =
-                                anioVencimiento * 10000
-                                        + mesVencimiento * 100
-                                        + diaVencimiento;
+                        int fechaVencimiento = anioVencimiento * 10000
+                                + mesVencimiento * 100
+                                + diaVencimiento;
 
-                        /*
-                         * El pagaré está pendiente a la fecha de corte
-                         * si su fecha de vencimiento ya llegó.
-                         */
                         if (fechaVencimiento <= fechaCorte) {
 
                             pagaresPendientes++;
                             totalCliente += montoPagare;
 
-                            System.out.println(
-                                    "Pagaré pendiente: " + numeroPagare
-                            );
+                            System.out.println("Pagaré pendiente: " + numeroPagare);
                         }
 
                         pagare++;
                     }
 
-                    /*
-                     * Solo contamos clientes que tengan
-                     * al menos un pagaré pendiente.
-                     */
                     if (pagaresPendientes > 0) {
 
                         clientesConDeuda++;
-
                         totalAgencia += totalCliente;
 
                         System.out.println("\n========== RECIBO ==========");
-
-                        System.out.println(
-                                "Código del cliente: " + codigoCliente
-                        );
-
-                        System.out.println(
-                                "Nombre: " + nombre
-                        );
-
-                        System.out.println(
-                                "Dirección: " + direccion
-                        );
-
-                        System.out.println(
-                                "Código del estado: " + codigoEstado
-                        );
-
-                        System.out.println(
-                                "Código de agencia: " + codigoAgencia
-                        );
-
-                        System.out.println(
-                                "Cantidad de pagarés pendientes: "
-                                        + pagaresPendientes
-                        );
-
-                        System.out.println(
-                                "Monto total pendiente: "
-                                        + totalCliente
-                        );
+                        System.out.println("Código del cliente: " + codigoCliente);
+                        System.out.println("Nombre: " + nombre);
+                        System.out.println("Dirección: " + direccion);
+                        System.out.println("Código del estado: " + codigoEstado);
+                        System.out.println("Código de agencia: " + codigoAgencia);
+                        System.out.println("Cantidad de pagarés pendientes: " + pagaresPendientes);
+                        System.out.println("Monto total pendiente: " + totalCliente);
 
                         if (totalCliente > mayorDeudaCliente) {
 
@@ -203,44 +170,15 @@ public class Ejercicio28 {
                     cliente++;
                 }
 
-                /*
-                 * Información de la agencia.
-                 */
                 System.out.println("\n========== DATOS DE LA AGENCIA ==========");
+                System.out.println("Código de agencia: " + codigoAgencia);
+                System.out.println("Código de estado: " + codigoEstado);
+                System.out.println("Clientes con pagarés pendientes: " + clientesConDeuda);
+                System.out.println("Monto total adeudado: " + totalAgencia);
+                System.out.println("Cliente con mayor deuda: " + codigoClienteMayorDeuda);
 
-                System.out.println(
-                        "Código de agencia: " + codigoAgencia
-                );
-
-                System.out.println(
-                        "Código de estado: " + codigoEstado
-                );
-
-                System.out.println(
-                        "Clientes con pagarés pendientes: "
-                                + clientesConDeuda
-                );
-
-                System.out.println(
-                        "Monto total adeudado: "
-                                + totalAgencia
-                );
-
-                System.out.println(
-                        "Cliente con mayor deuda: "
-                                + codigoClienteMayorDeuda
-                );
-
-                /*
-                 * Acumulamos el total de la agencia
-                 * para obtener el total del estado.
-                 */
                 totalEstado += totalAgencia;
 
-                /*
-                 * Determinamos la agencia con mayor
-                 * y menor deuda dentro del estado.
-                 */
                 if (agencia == 1) {
 
                     mayorMontoAgencia = totalAgencia;
@@ -264,64 +202,33 @@ public class Ejercicio28 {
                     }
                 }
 
-                /*
-                 * Acumulamos el monto de cada agencia.
-                 */
                 sumaMaximosAgencias += totalAgencia;
                 cantidadAgenciasNacional++;
 
                 agencia++;
             }
 
-            /*
-             * Información del estado.
-             */
             System.out.println("\n========== DATOS DEL ESTADO ==========");
-
-            System.out.println(
-                    "Código del estado: " + codigoEstado
-            );
-
-            System.out.println(
-                    "Monto total adeudado en el estado: "
-                            + totalEstado
-            );
-
-            System.out.println(
-                    "Agencia con mayor monto adeudado: "
-                            + codigoAgenciaMayor
-            );
-
-            System.out.println(
-                    "Agencia con menor monto adeudado: "
-                            + codigoAgenciaMenor
-            );
+            System.out.println("Código del estado: " + codigoEstado);
+            System.out.println("Monto total adeudado en el estado: " + totalEstado);
+            System.out.println("Agencia con mayor monto adeudado: " + codigoAgenciaMayor);
+            System.out.println("Agencia con menor monto adeudado: " + codigoAgenciaMenor);
 
             estado++;
         }
 
-        /*
-         * Promedio de los montos de las agencias.
-         */
         if (cantidadAgenciasNacional > 0) {
 
             double promedioMaximosAgencias =
                     sumaMaximosAgencias / cantidadAgenciasNacional;
 
-            System.out.println(
-                    "\n========== RESULTADO NACIONAL =========="
-            );
-
-            System.out.println(
-                    "Promedio de los montos máximos de las agencias: "
-                            + promedioMaximosAgencias
-            );
+            System.out.println("\n========== RESULTADO NACIONAL ==========");
+            System.out.println("Promedio de los montos máximos de las agencias: "
+                    + promedioMaximosAgencias);
 
         } else {
 
-            System.out.println(
-                    "No existen agencias para calcular el promedio."
-            );
+            System.out.println("No existen agencias para calcular el promedio.");
         }
     }
 }

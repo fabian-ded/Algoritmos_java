@@ -11,8 +11,8 @@ Desarrolle un algoritmo / programa que calcule y muestre:
 i. Porcentaje de empresas agrícolas del País.
 ii. Porcentaje de empresas mineras del sur respecto al total de empresas que realizan
 esa actividad.
-iii. Promedio de trabajadores de las empresas de cada tipo de actividad. iv.
-Localización con mayor número de empresas industriales. */
+iii. Promedio de trabajadores de las empresas de cada tipo de actividad.
+iv.Localización con mayor número de empresas industriales. */
 
 package BUCLES.DO_WHILE;
 
@@ -31,8 +31,8 @@ public class Ejercicio17 {
         int totalEmpresas = 0;
 
         int totalAgricolas = 0;
+        int totalIndustriales = 0;
         int totalMineras = 0;
-        int minerasSur = 0;
         int totalPesqueras = 0;
 
         int trabajadoresAgricolas = 0;
@@ -44,6 +44,8 @@ public class Ejercicio17 {
         int industrialesSur = 0;
         int industrialesEste = 0;
         int industrialesOeste = 0;
+
+        int minerasSur = 0;
 
         String continuar;
 
@@ -70,18 +72,18 @@ public class Ejercicio17 {
             System.out.println("Ingrese el número de trabajadores:");
             trabajadores = entrada.nextInt();
 
-            // Contar empresas según la actividad
             switch (actividad) {
 
                 case 1:
                     totalAgricolas++;
+
                     trabajadoresAgricolas += trabajadores;
+
                     break;
 
                 case 2:
+                    totalIndustriales++;
                     trabajadoresIndustria += trabajadores;
-
-                    // Contar la localización de la empresas en su industria
                     switch (localizacion) {
 
                         case 1:
@@ -99,21 +101,29 @@ public class Ejercicio17 {
                         case 4:
                             industrialesOeste++;
                             break;
+
+                        default:
+                            System.out.println("Localización inválida.");
                     }
+
                     break;
 
                 case 3:
                     totalMineras++;
                     trabajadoresMineria += trabajadores;
-
                     if (localizacion == 2) {
                         minerasSur++;
                     }
+
                     break;
 
                 case 4:
+                    totalPesqueras++;
                     trabajadoresPesquera += trabajadores;
                     break;
+
+                default:
+                    System.out.println("Actividad inválida.");
             }
 
             entrada.nextLine();
@@ -123,81 +133,72 @@ public class Ejercicio17 {
 
         } while (continuar.equalsIgnoreCase("si"));
 
-        // i. Porcentaje de empresas agrícolas
-        double porcentajeAgricolas =
-                (double) totalAgricolas / totalEmpresas * 100;
+        double porcentajeAgricolas = 0;
+        double porcentajeMinerasSur = 0;
 
-        // ii. Porcentaje de empresas mineras del sur
-        double porcentajeMinerasSur =
-                (double) minerasSur / totalMineras * 100;
+        if (totalEmpresas > 0) {
+            porcentajeAgricolas = (double) totalAgricolas / totalEmpresas * 100;
+        }
 
-        // iii. Promedio de trabajadores por actividad
-        double promedioAgricolas =
-                (double) trabajadoresAgricolas / totalAgricolas;
+        if (totalMineras > 0) {
+            porcentajeMinerasSur = (double) minerasSur / totalMineras * 100;
+        }
 
-        double promedioIndustria =
-                (double) trabajadoresIndustria /
-                        (totalEmpresas - totalAgricolas - totalMineras);
+        double promedioAgricolas = 0;
+        double promedioIndustria = 0;
+        double promedioMineria = 0;
+        double promedioPesquera = 0;
 
-        double promedioMineria =
-                (double) trabajadoresMineria / totalMineras;
+        if (totalAgricolas > 0) {
+            promedioAgricolas = (double) trabajadoresAgricolas / totalAgricolas;
+        };
 
-        totalPesqueras =
-                totalEmpresas - totalAgricolas - totalMineras -
-                        (totalEmpresas - totalAgricolas - totalMineras -
-                                totalPesqueras);
+        if (totalIndustriales > 0) {
+            promedioIndustria = (double) trabajadoresIndustria / totalIndustriales;
+        }
 
-        // iv. Localización con más empresas industriales
-        String localizacionMayor;
+        if (totalMineras > 0) {
+            promedioMineria = (double) trabajadoresMineria / totalMineras;
+        }
+
+        if (totalPesqueras > 0) {
+            promedioPesquera = (double) trabajadoresPesquera / totalPesqueras;
+        }
+
+        String localizacionMayor = "Norte";
+
         int mayor = industrialesNorte;
 
-        localizacionMayor = "Norte";
-
         if (industrialesSur > mayor) {
+
             mayor = industrialesSur;
             localizacionMayor = "Sur";
         }
 
         if (industrialesEste > mayor) {
+
             mayor = industrialesEste;
             localizacionMayor = "Este";
         }
 
         if (industrialesOeste > mayor) {
+
             mayor = industrialesOeste;
             localizacionMayor = "Oeste";
         }
 
         System.out.println("\n========== RESULTADOS ==========");
-
-        System.out.println(
-                "i. Porcentaje de empresas agrícolas: "
-                        + porcentajeAgricolas + "%"
-        );
-
-        System.out.println(
-                "ii. Porcentaje de empresas mineras del sur: "
-                        + porcentajeMinerasSur + "%"
-        );
-
-        System.out.println(
-                "iii. Promedio de trabajadores de empresas agrícolas: "
-                        + promedioAgricolas
-        );
-
-        System.out.println(
-                "Promedio de trabajadores de empresas industriales: "
-                        + promedioIndustria
-        );
-
-        System.out.println(
-                "Promedio de trabajadores de empresas mineras: "
-                        + promedioMineria
-        );
-
-        System.out.println(
-                "iv. Localización con mayor número de empresas industriales: "
-                        + localizacionMayor
-        );
+        System.out.println("Total de empresas: " + totalEmpresas);
+        System.out.println("Empresas agrícolas: " + totalAgricolas);
+        System.out.println("Empresas industriales: " + totalIndustriales);
+        System.out.println("Empresas mineras: " + totalMineras);
+        System.out.println("Empresas pesqueras: " + totalPesqueras);
+        System.out.println("\nPorcentaje de empresas agrícolas: " + porcentajeAgricolas + "%");
+        System.out.println("Porcentaje de empresas mineras del sur: " + porcentajeMinerasSur + "%");
+        System.out.println("\n. Promedio de trabajadores de empresas agrícolas: " + promedioAgricolas);
+        System.out.println("Promedio de trabajadores de empresas industriales: " + promedioIndustria);
+        System.out.println("Promedio de trabajadores de empresas mineras: " + promedioMineria);
+        System.out.println("Promedio de trabajadores de empresas pesqueras: " + promedioPesquera);
+        System.out.println("\n. Localización con mayor número de empresas industriales: " + localizacionMayor);
     }
 }

@@ -51,63 +51,40 @@ public class Ejercicio35 {
 
             System.out.println("Ingrese la cantidad de ciudades:");
             cantidadCiudades = entrada.nextInt();
-
             int ciudad = 1;
-
             int profesionalesDesempleadosEstado = 0;
             int profesionalesEstado = 0;
 
             do {
 
-                System.out.println(
-                        "\n---------- CIUDAD #" + ciudad + " ----------"
-                );
-
+                System.out.println("\n---------- CIUDAD #" + ciudad + " ----------");
                 int codigoCiudad;
                 int cantidadMunicipios;
-
                 System.out.println("Ingrese el código de la ciudad:");
                 codigoCiudad = entrada.nextInt();
-
                 System.out.println("Ingrese la cantidad de municipios:");
                 cantidadMunicipios = entrada.nextInt();
-
                 int municipio = 1;
-
                 int personasEspecialesCiudad = 0;
                 int totalPersonasCiudad = 0;
 
                 do {
 
-                    System.out.println(
-                            "\n------ MUNICIPIO #" + municipio + " ------"
-                    );
-
+                    System.out.println("\n------ MUNICIPIO #" + municipio + " ------");
                     int codigoMunicipio;
                     int cantidadPersonas;
-
                     System.out.println("Ingrese el código del municipio:");
                     codigoMunicipio = entrada.nextInt();
-
-                    System.out.println(
-                            "Ingrese la cantidad de personas del municipio:"
-                    );
-
+                    System.out.println("Ingrese la cantidad de personas del municipio:");
                     cantidadPersonas = entrada.nextInt();
-
                     int persona = 1;
-
                     int personasEspecialesMunicipio = 0;
 
                     do {
 
-                        System.out.println(
-                                "\nPersona #" + persona
-                        );
-
+                        System.out.println("\nPersona #" + persona);
                         System.out.println("Ingrese la edad:");
                         int edad = entrada.nextInt();
-
                         System.out.println(
                                 "Ingrese el nivel de educación:"
                                         + "\nN = Ninguna"
@@ -115,9 +92,7 @@ public class Ejercicio35 {
                                         + "\nS = Secundaria"
                                         + "\nP = Profesional"
                         );
-
                         String educacion = entrada.next();
-
                         System.out.println(
                                 "Ingrese la situación actual:"
                                         + "\nD = Desempleado"
@@ -125,11 +100,6 @@ public class Ejercicio35 {
                         );
 
                         String situacion = entrada.next();
-
-                        /*
-                         * Característica solicitada:
-                         * desempleado + sin educación + mayor de 25 años.
-                         */
                         if (edad > 25
                                 && educacion.equalsIgnoreCase("N")
                                 && situacion.equalsIgnoreCase("D")) {
@@ -138,20 +108,12 @@ public class Ejercicio35 {
                             personasEspecialesCiudad++;
                         }
 
-                        /*
-                         * Contabilizar profesionales del Estado
-                         * y profesionales desempleados.
-                         */
                         if (educacion.equalsIgnoreCase("P")) {
-
                             profesionalesEstado++;
-
                             if (situacion.equalsIgnoreCase("D")) {
-
                                 profesionalesDesempleadosEstado++;
                             }
                         }
-
                         persona++;
 
                     } while (persona <= cantidadPersonas);
@@ -164,93 +126,47 @@ public class Ejercicio35 {
                     );
 
                     totalPersonasCiudad += cantidadPersonas;
-
                     municipio++;
 
                 } while (municipio <= cantidadMunicipios);
 
-                /*
-                 * Verificar si las personas que cumplen la condición
-                 * representan más del 50% de la ciudad.
-                 */
                 double porcentajeCiudad = 0;
 
                 if (totalPersonasCiudad > 0) {
-
-                    porcentajeCiudad =
-                            (double) personasEspecialesCiudad
-                                    / totalPersonasCiudad * 100;
+                    porcentajeCiudad = (double) personasEspecialesCiudad / totalPersonasCiudad * 100;
                 }
 
                 if (porcentajeCiudad > 50) {
-
-                    System.out.println(
-                            "La ciudad " + codigoCiudad
-                                    + " tiene más del 50% "
-                                    + "de personas con la característica."
-                    );
+                    System.out.println("La ciudad " + codigoCiudad + " tiene más del 50% " + "de personas con la característica.");
                 }
-
                 ciudad++;
 
             } while (ciudad <= cantidadCiudades);
 
-            /*
-             * Determinar el Estado con mayor porcentaje
-             * de profesionales desempleados.
-             */
             double porcentajeProfesionalesDesempleados = 0;
 
             if (profesionalesEstado > 0) {
-
-                porcentajeProfesionalesDesempleados =
-                        (double) profesionalesDesempleadosEstado
-                                / profesionalesEstado * 100;
+                porcentajeProfesionalesDesempleados = (double) profesionalesDesempleadosEstado / profesionalesEstado * 100;
             }
 
-            System.out.println(
-                    "\nPorcentaje de profesionales desempleados "
-                            + "del Estado " + codigoEstado + ": "
-                            + porcentajeProfesionalesDesempleados + "%"
-            );
+            System.out.println("\nPorcentaje de profesionales desempleados " + "del Estado " + codigoEstado + ": " + porcentajeProfesionalesDesempleados + "%");
 
-            /*
-             * Guardamos el Estado que tenga mayor porcentaje.
-             */
             if (profesionalesDesempleadosEstado > mayorProfesionalesDesempleados) {
-
-                mayorProfesionalesDesempleados =
-                        profesionalesDesempleadosEstado;
-
+                mayorProfesionalesDesempleados = profesionalesDesempleadosEstado;
                 mayorTotalProfesionales = profesionalesEstado;
-
-                estadoMayorProfesionales =
-                        String.valueOf(codigoEstado);
+                estadoMayorProfesionales = String.valueOf(codigoEstado);
             }
-
             estado++;
 
         } while (estado <= cantidadEstados);
 
-        System.out.println(
-                "\n========== RESULTADO FINAL =========="
-        );
+        System.out.println("\n========== RESULTADO FINAL ==========");
 
         if (!estadoMayorProfesionales.isEmpty()) {
-
-            double porcentajeMayor =
-                    (double) mayorProfesionalesDesempleados
-                            / mayorTotalProfesionales * 100;
-
-            System.out.println(
-                    "Estado con mayor porcentaje de profesionales "
-                            + "desempleados: "
-                            + estadoMayorProfesionales
+            double porcentajeMayor = (double) mayorProfesionalesDesempleados / mayorTotalProfesionales * 100;
+            System.out.println("Estado con mayor porcentaje de profesionales " + "desempleados: " + estadoMayorProfesionales
             );
-
-            System.out.println(
-                    "Porcentaje: " + porcentajeMayor + "%"
-            );
+            System.out.println("Porcentaje: " + porcentajeMayor + "%");
         }
     }
 }

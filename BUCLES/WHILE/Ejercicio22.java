@@ -18,21 +18,17 @@ public class Ejercicio22 {
 
             numeroPago++;
 
-            // Si el pago supera la deuda, se paga solamente lo pendiente
             if (pago > pendiente) {
                 pago = pendiente;
             }
 
             pendiente -= pago;
 
-            System.out.println(
-                    numeroPago + "\t"
-                            + pago + "\t"
-                            + pendiente
-            );
+            System.out.println(numeroPago + "\t" + pago + "\t" + pendiente);
 
             pago += aumento;
-        }
+
+        };
 
         System.out.println("\nNúmero de pagos: " + numeroPago);
         System.out.println("Monto del último pago: " + (pago - aumento));

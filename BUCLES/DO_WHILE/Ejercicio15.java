@@ -79,8 +79,7 @@ public class Ejercicio15 {
             System.out.println("Monto a cancelar: $" + montoCancelar);
 
             entrada.nextLine();
-
-            System.out.println("\n¿Desea ingresar otra factura? (si/no)");
+            System.out.println("¿Desea ingresar otra factura? (si/no)");
             continuar = entrada.nextLine();
 
         } while (continuar.equalsIgnoreCase("si"));

@@ -59,84 +59,40 @@ public class Ejercicio29 {
 
             do {
 
-                System.out.println(
-                        "Ingrese las unidades producidas el día "
-                                + dia + ":"
-                );
-
+                System.out.println("Ingrese las unidades producidas el día " + dia + ":");
                 int produccionDia = entrada.nextInt();
-
                 produccionSemanal += produccionDia;
-
                 dia++;
 
             } while (dia <= 7);
 
-            double porcentaje =
-                    (double) produccionSemanal / limiteSemanal * 100;
-
+            double porcentaje = (double) produccionSemanal / limiteSemanal * 100;
             System.out.println("\n----- RESULTADO DEL OBRERO -----");
-
             System.out.println("Nombre: " + nombre);
+            System.out.println("Total producido en la semana: " + produccionSemanal);
+            System.out.println("Porcentaje respecto al límite: " + porcentaje + "%");
 
-            System.out.println(
-                    "Total producido en la semana: "
-                            + produccionSemanal
-            );
-
-            System.out.println(
-                    "Porcentaje respecto al límite: "
-                            + porcentaje + "%"
-            );
-
-            // Verificar si alcanzó o superó el límite
             if (produccionSemanal >= limiteSemanal) {
-
                 obrerosCumplieron++;
             }
 
-            // Determinar el obrero que más produjo
             if (produccionSemanal > mayorProduccion) {
 
                 mayorProduccion = produccionSemanal;
                 obreroMayor = nombre;
             }
 
-            // Acumular producción de todos los obreros
             produccionTotalBloquera += produccionSemanal;
 
             obrero++;
 
         } while (obrero <= cantidadObreros);
-
-        // Porcentaje de obreros que cumplieron el límite
-        double porcentajeCumplieron =
-                (double) obrerosCumplieron / cantidadObreros * 100;
-
-        // Promedio de producción
-        double promedioProduccion =
-                (double) produccionTotalBloquera / cantidadObreros;
-
+        double porcentajeCumplieron = (double) obrerosCumplieron / cantidadObreros * 100;
+        double promedioProduccion = (double) produccionTotalBloquera / cantidadObreros;
         System.out.println("\n========== RESULTADOS GENERALES ==========");
-
-        System.out.println(
-                "Porcentaje de obreros que alcanzaron o superaron el límite: "
-                        + porcentajeCumplieron + "%"
-        );
-
-        System.out.println(
-                "Obrero que más produjo: "
-                        + obreroMayor
-        );
-
-        System.out.println(
-                "Cantidad producida por el obrero: "
-                        + mayorProduccion
-        );
-
-        System.out.println(
-                "Promedio de producción semanal de la bloquera: "
-                        + promedioProduccion
-        );
+        System.out.println("Porcentaje de obreros que alcanzaron o superaron el límite: " + porcentajeCumplieron + "%");
+        System.out.println("Obrero que más produjo: " + obreroMayor);
+        System.out.println("Cantidad producida por el obrero: " + mayorProduccion);
+        System.out.println("Promedio de producción semanal de la bloquera: " + promedioProduccion);
     }
 }

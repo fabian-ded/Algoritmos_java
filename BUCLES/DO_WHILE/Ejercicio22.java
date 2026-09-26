@@ -33,11 +33,7 @@ public class Ejercicio22 {
 
             pendiente -= pago;
 
-            System.out.println(
-                    numeroPago + "\t"
-                            + pago + "\t"
-                            + pendiente
-            );
+            System.out.println(numeroPago + "\t" + pago + "\t" + pendiente);
 
             pago += aumento;
 

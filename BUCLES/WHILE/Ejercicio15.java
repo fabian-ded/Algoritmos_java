@@ -17,7 +17,7 @@ public class Ejercicio15 {
         double descuento;
         double montoCancelar;
 
-        String continuar = "si";
+        String continuar= "si";
 
         while (continuar.equalsIgnoreCase("si")) {
 
@@ -63,9 +63,9 @@ public class Ejercicio15 {
             System.out.println("Monto a cancelar: $" + montoCancelar);
 
             entrada.nextLine();
-
-            System.out.println("\n¿Desea ingresar otra factura? (si/no)");
+            System.out.println("¿Desea ingresar otra factura? (si/no)");
             continuar = entrada.nextLine();
-        }
+
+        };
     }
 }

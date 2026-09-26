@@ -6,93 +6,69 @@ public class Ejercicio9 {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
+        int a = 0, i = 0, o = 0;
+        int preguntas = 0;
+        double estandar = 0;
+        double guardador = 0;
+        double estandarmenor = 0;
+        double por_mayor = 0;
+        double por_menor = 0;
+        int ubi1 = 0;
+        int ubi2 = 0;
 
-        int cuestionario = 1;
-        double sumaPromedios = 0;
+        while (i <= 3){
 
-        double promedioMayor = 0;
-        double promedioMenor = 5;
+            System.out.println("Cuestionario numero " + i);
+            int e = 0;
+            while (e <= 5) {
+                System.out.println("Pregunta numero " + e);
+                System.out.println("Cuanto puntaje tubo en la pregunta 1:");
+                int pre1 = entrada.nextInt();
+                System.out.println("Cuanto puntaje tubo en la pregunta 2:");
+                int pre2 = entrada.nextInt();
+                System.out.println("Cuanto puntaje tubo en la pregunta 3:");
+                int pre3 = entrada.nextInt();
+                System.out.println("Cuanto puntaje tubo en la pregunta 4:");
+                int pre4 = entrada.nextInt();
+                System.out.println("Cuanto puntaje tubo en la pregunta 5:");
+                int pre5 = entrada.nextInt();
 
-        int instrumentoMayor = 0;
-        int instrumentoMenor = 0;
+                guardador += pre1 + pre2 + pre3 + pre4 + pre5;
+                preguntas = pre1 + pre2 + pre3 + pre4 + pre5;
 
-        int promedioMenor3 = 0;
-        int promedioMayor4 = 0;
-        int promedioEntre45y5 = 0;
-
-        while (cuestionario <= 64){
-
-            int pregunta = 1;
-            int totalPuntos = 0;
-
-            System.out.println("\nCuestionario #" + cuestionario);
-            while (pregunta <= 23){
-                System.out.println("Ingrese el valor de la pregunta " + pregunta + " (1-5):");
-                int respuesta = entrada.nextInt();
-
-                totalPuntos += respuesta;
-
-                pregunta++;
-            }
-            double promedio = (double) totalPuntos / 23;
-
-            System.out.println("Promedio del cuestionario: " + promedio);
-
-            sumaPromedios += promedio;
-
-            if (promedio > promedioMayor) {
-                promedioMayor = promedio;
-                instrumentoMayor = cuestionario;
+                e++;
             }
 
-            if (promedio < promedioMenor) {
-                promedioMenor = promedio;
-                instrumentoMenor = cuestionario;
+            por_mayor = (double) preguntas / e;
+            if (por_mayor > estandar) {
+                estandar = por_mayor;
+                ubi1 = i;
             }
 
-            if (promedio < 3) {
-                promedioMenor3++;
+            por_menor = (double) preguntas / e;
+            if (por_menor < estandarmenor) {
+                estandarmenor = por_menor;
+                ubi2 = i;
             }
 
-            if (promedio > 4) {
-                promedioMayor4++;
+            if (por_menor < 3) {
+                a++;
             }
 
-            if (promedio >= 4.5 && promedio <= 5) {
-                promedioEntre45y5++;
+            if (por_mayor > 4) {
+                o++;
             }
 
-            cuestionario++;
-        }
-        double promedioGeneral = sumaPromedios / 64;
+            i++;
+        };
+        System.out.println("El promedio de todos los cuestionarios es de: " + guardador);
+        System.out.println("El promedio mas alto obtenido es de: " + estandar + " y su ubicacion es " + ubi1);
+        System.out.println("El promedio mas bajo obtenido es de: " + estandarmenor + " y su ubicacion es " + ubi2);
 
-        double porcentajeMenor3RespectoMayor4 =
-                (double) promedioMenor3 / promedioMayor4 * 100;
+        double prom_menor = ((double)i/a)/100;
+        System.out.println("El promedio de cuestionarios que tuvieron menor que 3 es :" + prom_menor);
 
-        double porcentajeEntre45y5 =
-                (double) promedioEntre45y5 / 64 * 100;
-
-        System.out.println("\n========== RESULTADOS ==========");
-
-        System.out.println("Promedio general: " + promedioGeneral);
-
-        System.out.println(
-                "Promedio más alto: " + promedioMayor +
-                        " - Instrumento #" + instrumentoMayor
-        );
-
-        System.out.println(
-                "Promedio más bajo: " + promedioMenor +
-                        " - Instrumento #" + instrumentoMenor
-        );
-
-        System.out.println(
-                "Porcentaje de cuestionarios con promedio inferior a 3 respecto a los superiores a 4: "
-                        + porcentajeMenor3RespectoMayor4 + "%"
-        );
-
-        System.out.println(
-                "Porcentaje de cuestionarios entre 4.5 y 5: "
-                        + porcentajeEntre45y5 + "%");
+        double prom_mayor = ((double)i*o)/100;
+        System.out.println("El promedio de cuestionarios que tuvieron mayor de 4,5 es :" + prom_mayor);
     }
 }

@@ -73,33 +73,23 @@ public class Ejercicio27 {
         do {
 
             contador++;
-
             entrada.nextLine();
-
             System.out.println("\n========== SATÉLITE #" + contador + " ==========");
-
             System.out.println("Ingrese el nombre del satélite:");
             nombre = entrada.nextLine();
-
             System.out.println("Ingrese el país:");
             pais = entrada.nextLine();
-
             System.out.println("Ingrese la masa del satélite en Kg:");
             masa = entrada.nextDouble();
-
             System.out.println("Ingrese la altura del satélite en metros:");
             altura = entrada.nextDouble();
-
-            // Fórmula de la fuerza de atracción
             fuerza = (G * masa * MASA_TIERRA) / (altura * altura);
 
             System.out.println("Fuerza de atracción: " + fuerza + " N");
 
-            // Acumuladores
             sumaFuerzas += fuerza;
             sumaMasas += masa;
 
-            // Mayor y menor fuerza
             if (contador == 1) {
 
                 mayorFuerza = fuerza;
@@ -127,7 +117,6 @@ public class Ejercicio27 {
                 }
             }
 
-            // Mayor masa
             if (masa > mayorMasa) {
                 mayorMasa = masa;
             }
@@ -136,28 +125,13 @@ public class Ejercicio27 {
 
         double promedioFuerza = sumaFuerzas / cantidadSatélites;
         double promedioMasa = sumaMasas / cantidadSatélites;
-
         System.out.println("\n========== RESULTADOS ==========");
-
-        System.out.println("a) Mayor fuerza de atracción: "
-                + mayorFuerza + " N");
-
-        System.out.println("   Menor fuerza de atracción: "
-                + menorFuerza + " N");
-
-        System.out.println("b) Fuerza de atracción promedio: "
-                + promedioFuerza + " N");
-
-        System.out.println("c) Mayor masa de los satélites: "
-                + mayorMasa + " Kg");
-
-        System.out.println("d) Masa promedio de los satélites: "
-                + promedioMasa + " Kg");
-
-        System.out.println("e) Mayor altura: "
-                + mayorAltura + " metros");
-
-        System.out.println("   Menor altura: "
-                + menorAltura + " metros");
+        System.out.println("a) Mayor fuerza de atracción: " + mayorFuerza + " N");
+        System.out.println("   Menor fuerza de atracción: " + menorFuerza + " N");
+        System.out.println("b) Fuerza de atracción promedio: " + promedioFuerza + " N");
+        System.out.println("c) Mayor masa de los satélites: " + mayorMasa + " Kg");
+        System.out.println("d) Masa promedio de los satélites: " + promedioMasa + " Kg");
+        System.out.println("e) Mayor altura: " + mayorAltura + " metros");
+        System.out.println("   Menor altura: " + menorAltura + " metros");
     }
 }

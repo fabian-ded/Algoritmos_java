@@ -54,72 +54,36 @@ public class Ejercicio31 {
 
                     do {
 
-                        System.out.println(
-                                "Ingrese la calificación #" + calificacion + ":"
-                        );
-
+                        System.out.println("Ingrese la calificación #" + calificacion + ":");
                         double nota = entrada.nextDouble();
-
                         sumaCalificaciones += nota;
-
                         calificacion++;
 
                     } while (calificacion <= 3);
 
                     double promedioMateria = sumaCalificaciones / 3;
-
-                    System.out.println(
-                            "Promedio de la materia: "
-                                    + promedioMateria
-                    );
-
+                    System.out.println("Promedio de la materia: " + promedioMateria);
                     sumaPromediosMaterias += promedioMateria;
-
                     materia++;
 
                 } while (materia <= cantidadMaterias);
 
-                // Promedio del alumno
-                double promedioAlumno =
-                        sumaPromediosMaterias / cantidadMaterias;
-
-                System.out.println(
-                        "Promedio del alumno #" + alumno + ": "
-                                + promedioAlumno
-                );
-
+                double promedioAlumno = sumaPromediosMaterias / cantidadMaterias;
+                System.out.println("Promedio del alumno #" + alumno + ": " + promedioAlumno);
                 sumaPromediosAlumnos += promedioAlumno;
-
                 alumno++;
 
             } while (alumno <= cantidadAlumnos);
 
-            // Promedio del grupo
-            double promedioGrupo =
-                    sumaPromediosAlumnos / cantidadAlumnos;
-
-            System.out.println(
-                    "\nPromedio del grupo #" + grupo + ": "
-                            + promedioGrupo
-            );
-
+            double promedioGrupo = sumaPromediosAlumnos / cantidadAlumnos;
+            System.out.println("\nPromedio del grupo #" + grupo + ": " + promedioGrupo);
             sumaPromediosGrupos += promedioGrupo;
-
             grupo++;
 
         } while (grupo <= cantidadGrupos);
 
-        // Promedio general de todos los grupos
-        double promedioGeneral =
-                sumaPromediosGrupos / cantidadGrupos;
-
-        System.out.println(
-                "\n========== RESULTADO GENERAL =========="
-        );
-
-        System.out.println(
-                "Promedio general de todos los grupos: "
-                        + promedioGeneral
-        );
+        double promedioGeneral = sumaPromediosGrupos / cantidadGrupos;
+        System.out.println("\n========== RESULTADO GENERAL ==========");
+        System.out.println("Promedio general de todos los grupos: " + promedioGeneral);
     }
 }

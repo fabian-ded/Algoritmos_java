@@ -50,32 +50,23 @@ public class Ejercicio14 {
             System.out.println("Ingrese la nota de Inglés:");
             ingles = entrada.nextDouble();
 
-            // a. Nota menor de Programación
             if (programacion < menorProgramacion) {
                 menorProgramacion = programacion;
             }
 
-            // d. Promedio general de Programación
             sumaProgramacion += programacion;
 
-            // b. Alumnos que presentaron o no Inglés
             if (ingles == 0) {
                 inglesNoPresentaron++;
             } else {
                 inglesPresentaron++;
             }
 
-            // c. Alumnos que aprobaron todas las materias
-            if (matematica >= 3 &&
-                    programacion >= 3 &&
-                    ingles >= 3) {
-
+            if (matematica >= 3 && programacion >= 3 && ingles >= 3) {
                 aprobaronTodas++;
             }
 
-            // e. Alumnos que presentaron Matemática
             if (matematica != 0) {
-
                 matematicaPresentaron++;
 
                 if (matematica < 3) {
@@ -89,41 +80,14 @@ public class Ejercicio14 {
             continuar = entrada.nextLine();
 
         } while (continuar.equalsIgnoreCase("si"));
-
-        double promedioProgramacion =
-                sumaProgramacion / totalAlumnos;
-
-        double porcentajeIngles =
-                (double) inglesNoPresentaron / inglesPresentaron * 100;
-
-        double porcentajeMatematica =
-                (double) matematicaReprobaron / matematicaPresentaron * 100;
-
+        double promedioProgramacion = sumaProgramacion / totalAlumnos;
+        double porcentajeIngles = (double) inglesNoPresentaron / inglesPresentaron * 100;
+        double porcentajeMatematica = (double) matematicaReprobaron / matematicaPresentaron * 100;
         System.out.println("\n========== RESULTADOS ==========");
-
-        System.out.println(
-                "a. Nota menor de Programación: "
-                        + menorProgramacion
-        );
-
-        System.out.println(
-                "b. Porcentaje de alumnos que no presentaron Inglés respecto a los que sí presentaron: "
-                        + porcentajeIngles + "%"
-        );
-
-        System.out.println(
-                "c. Número de alumnos que aprobaron todas las materias: "
-                        + aprobaronTodas
-        );
-
-        System.out.println(
-                "d. Promedio general en Programación: "
-                        + promedioProgramacion
-        );
-
-        System.out.println(
-                "e. Porcentaje de alumnos que reprobaron Matemática respecto a los que presentaron: "
-                        + porcentajeMatematica + "%"
-        );
+        System.out.println("a. Nota menor de Programación: " + menorProgramacion);
+        System.out.println("b. Porcentaje de alumnos que no presentaron Inglés respecto a los que sí presentaron: " + porcentajeIngles + "%");
+        System.out.println("c. Número de alumnos que aprobaron todas las materias: " + aprobaronTodas);
+        System.out.println("d. Promedio general en Programación: " + promedioProgramacion);
+        System.out.println("e. Porcentaje de alumnos que reprobaron Matemática respecto a los que presentaron: " + porcentajeMatematica + "%");
     }
 }

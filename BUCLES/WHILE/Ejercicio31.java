@@ -1,7 +1,14 @@
+/* 76. Se desea obtener el promedio de g grupos que están en un mismo año escolar, siendo que cada
+grupo puede tener n alumnos que cada alumno puede llevar m materias y que en todas las materias
+se promedian tres calificaciones para obtener el promedio de la materia. Lo que se desea es mostrar
+el promedio de los grupos, el promedio de cada grupo y el promedio de cada alumno. */
+
 package BUCLES.WHILE;
+
 import java.util.Scanner;
 
 public class Ejercicio31 {
+
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
@@ -46,69 +53,33 @@ public class Ejercicio31 {
                     double sumaCalificaciones = 0;
 
                     while (calificacion <= 3) {
-
-                        System.out.println(
-                                "Ingrese la calificación #" + calificacion + ":"
-                        );
-
+                        System.out.println("Ingrese la calificación #" + calificacion + ":");
                         double nota = entrada.nextDouble();
-
                         sumaCalificaciones += nota;
-
                         calificacion++;
                     }
 
                     double promedioMateria = sumaCalificaciones / 3;
-
-                    System.out.println(
-                            "Promedio de la materia: "
-                                    + promedioMateria
-                    );
-
+                    System.out.println("Promedio de la materia: " + promedioMateria);
                     sumaPromediosMaterias += promedioMateria;
-
                     materia++;
                 }
 
-                // Promedio del alumno
-                double promedioAlumno =
-                        sumaPromediosMaterias / cantidadMaterias;
-
-                System.out.println(
-                        "Promedio del alumno #" + alumno + ": "
-                                + promedioAlumno
-                );
-
+                double promedioAlumno = sumaPromediosMaterias / cantidadMaterias;
+                System.out.println("Promedio del alumno #" + alumno + ": " + promedioAlumno);
                 sumaPromediosAlumnos += promedioAlumno;
-
                 alumno++;
             }
 
-            // Promedio del grupo
-            double promedioGrupo =
-                    sumaPromediosAlumnos / cantidadAlumnos;
-
-            System.out.println(
-                    "\nPromedio del grupo #" + grupo + ": "
-                            + promedioGrupo
-            );
-
+            double promedioGrupo = sumaPromediosAlumnos / cantidadAlumnos;
+            System.out.println("\nPromedio del grupo #" + grupo + ": " + promedioGrupo);
             sumaPromediosGrupos += promedioGrupo;
-
             grupo++;
         }
 
-        // Promedio general de todos los grupos
-        double promedioGeneral =
-                sumaPromediosGrupos / cantidadGrupos;
+        double promedioGeneral = sumaPromediosGrupos / cantidadGrupos;
 
-        System.out.println(
-                "\n========== RESULTADO GENERAL =========="
-        );
-
-        System.out.println(
-                "Promedio general de todos los grupos: "
-                        + promedioGeneral
-        );
+        System.out.println("\n========== RESULTADO GENERAL ==========");
+        System.out.println("Promedio general de todos los grupos: " + promedioGeneral);
     }
 }

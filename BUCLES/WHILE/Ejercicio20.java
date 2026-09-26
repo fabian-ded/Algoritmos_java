@@ -19,9 +19,9 @@ public class Ejercicio20 {
         double seguroSocial;
         double sueldoNeto;
 
-        String continuar = "si";
+        String continuar= "si";
 
-        while (continuar.equalsIgnoreCase("si")) {
+        while (continuar.equalsIgnoreCase("si")){
 
             System.out.println("\n========== DATOS DEL EMPLEADO ==========");
 
@@ -43,7 +43,6 @@ public class Ejercicio20 {
             System.out.println("Ingrese los días asistidos de los 30 días:");
             diasAsistidos = entrada.nextInt();
 
-            // Sueldo básico según el tipo de empleado
             switch (tipoEmpleado) {
 
                 case 1:
@@ -63,33 +62,24 @@ public class Ejercicio20 {
                     break;
             }
 
-            // Aporte por hijos
             if (hijos > 5) {
                 hijos = 5;
             }
 
             aporteHijos = sueldoBasico * 0.10 * hijos;
 
-            // Aporte por asistencia superior al 95%
             if (diasAsistidos > 28.5) {
                 aporteAsistencia = sueldoBasico * 0.05;
             } else {
                 aporteAsistencia = 0;
             }
 
-            // Deducciones
             cajaAhorros = sueldoBasico * 0.10;
 
             seguroSocial = sueldoBasico * 0.02;
 
-            // Sueldo neto
-            sueldoNeto = sueldoBasico
-                    + aporteHijos
-                    + aporteAsistencia
-                    - cajaAhorros
-                    - seguroSocial;
+            sueldoNeto = sueldoBasico + aporteHijos + aporteAsistencia - cajaAhorros - seguroSocial;
 
-            // Registro del empleado
             System.out.println("\n========== REGISTRO ==========");
 
             System.out.println("Nombre: " + nombre);
@@ -105,6 +95,7 @@ public class Ejercicio20 {
 
             System.out.println("\n¿Desea ingresar otro empleado? (si/no)");
             continuar = entrada.nextLine();
-        }
+
+        };
     }
 }
